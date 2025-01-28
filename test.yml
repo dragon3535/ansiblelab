@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+    - name: test task
+      tags: test
+      apt:
+        update_cache: yes
