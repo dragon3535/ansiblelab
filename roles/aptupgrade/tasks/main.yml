@@ -1,0 +1,12 @@
+- name: Update cache, dist-pugrade, autoremove and autoclean
+  tags: apt,update
+  apt:
+    autoclean: true
+    autoremove: true
+    update-cache: true
+    upgrade: "dist"
+
+- name: Reboot machine after update
+  tags: reboot,update
+  reboot:
+    reboot_timeout: 600
