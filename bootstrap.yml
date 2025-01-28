@@ -1,0 +1,6 @@
+---
+
+- hosts: ssh_access
+  become: true
+  roles:
+    - bootstrap

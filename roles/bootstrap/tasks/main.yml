@@ -1,0 +1,5 @@
+- name: Create ansible-bot user
+  tags: bootstrap,ssh
+  user:
+    name: ansible-bot
+    groups: root 
