@@ -1,5 +1,20 @@
 - name: Create ansible-bot user
-  tags: bootstrap,ssh
+  tags: bootstrap,ssh,users
   user:
     name: ansible-bot
     groups: root 
+
+- name: Add ssh key for ansible-bot user
+  tags: bootstrap,ssh
+  authorized_key:
+    user: ansible-bot
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOKV1mxW+cCxdh/KAe0BPaQKj4MNkUQHrAaViYDLMXSL main ansible key"
+
+- name: Add sudoers file for ansible-bot
+  tags: bootstrap,sudoers,copy
+  copy:
+    src: sudoer_ansible-bot
+    dest: /etc/sudoers.d/ansible-bot 
+    owner: root
+    group: root
+    mode: 0440
