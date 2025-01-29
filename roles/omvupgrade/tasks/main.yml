@@ -1,0 +1,3 @@
+- name: Run omv-upgrade on OMV host
+  tags: update,ssh,command,OMV
+  command: omv-upgrade

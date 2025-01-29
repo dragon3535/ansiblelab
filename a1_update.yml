@@ -1,4 +1,8 @@
 ---
+- hosts: a1_update_omv
+  become: true
+  roles:
+    - omvupgrade
 
 - hosts: a1_update_apt
   become: true
