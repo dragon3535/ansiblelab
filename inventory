@@ -8,13 +8,11 @@ lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 lenovo.Docker.Backup.ansible2 ansible_host=192.168.64.50 ansible_port=2222
 
 [a1_update_apt]
-lenovo.Docker.Backup.ansible2 ansible_host=192.168.64.50 ansible_port=2222
 lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 VM.OMV.Primary.host ansible_host=192.168.64.200 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 
 [a2_update_apt]
-VM.Docker.Internal.ansible1 ansible_host=192.168.64.110 ansible_port=2222
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
 Fujitsu.PVE.Proxmox.host ansible_host=192.168.64.100 ansible_port=22
 
@@ -30,4 +28,7 @@ VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 [a1_update_compose]
 lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
+VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
+
+[a2_update_compose]
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22

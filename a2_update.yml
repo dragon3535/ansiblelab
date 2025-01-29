@@ -1,0 +1,6 @@
+---
+
+- hosts: a2_update_apt
+  become: true
+  roles:
+    - aptupgrade
