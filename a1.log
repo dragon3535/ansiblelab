@@ -1,0 +1,42 @@
+
+PLAY [a1_update_omv] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Run omv-upgrade on OMV host] ********************************
+changed: [VM.OMV.Primary.host]
+
+PLAY [a1_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+2025-01-29 01:39
+
+PLAY [a1_update_omv] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Run omv-upgrade on OMV host] ********************************
+changed: [VM.OMV.Primary.host]
+
+PLAY [a1_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [lenovo.Docker.Backup.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+changed: [VM.Docker.Public.host]
+ok: [lenovo.Docker.Backup.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Public.host]
+fatal: [lenovo.Docker.Backup.host]: FAILED! => {"msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.64.50 port 22: No route to host"}
+
+PLAY RECAP *********************************************************************
+VM.Docker.Public.host      : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.OMV.Primary.host        : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+lenovo.Docker.Backup.host  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
