@@ -40,3 +40,32 @@ VM.Docker.Public.host      : ok=3    changed=2    unreachable=0    failed=0    s
 VM.OMV.Primary.host        : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 lenovo.Docker.Backup.host  : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 
+2025-01-29 09:40
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [VM.Docker.Internal.ansible1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ED25519 key sent by the remote host is\nSHA256:dlY1GbvpgomV7HRYdtVrVZIZt76T+1GTGT4ZMlITgA8.\r\nPlease contact your system administrator.\r\nAdd correct host key in /ansible/.ssh/known_hosts to get rid of this message.\r\nOffending ED25519 key in /ansible/.ssh/known_hosts:22\r\n  remove with:\r\n  ssh-keygen -f '/ansible/.ssh/known_hosts' -R '[192.168.64.110]:2222'\r\nHost key for [192.168.64.110]:2222 has changed and you have requested strict checking.\r\nHost key verification failed.", "unreachable": true}
+ok: [VM.OMV.Primary.host]
+ok: [VM.Docker.Public.host]
+ok: [Fujitsu.PVE.Proxmox.host]
+fatal: [lenovo.Docker.Backup.ansible2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ED25519 key sent by the remote host is\nSHA256:dlY1GbvpgomV7HRYdtVrVZIZt76T+1GTGT4ZMlITgA8.\r\nPlease contact your system administrator.\r\nAdd correct host key in /ansible/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /ansible/.ssh/known_hosts:21\r\n  remove with:\r\n  ssh-keygen -f '/ansible/.ssh/known_hosts' -R '[192.168.64.50]:2222'\r\nHost key for [192.168.64.50]:2222 has changed and you have requested strict checking.\r\nHost key verification failed.", "unreachable": true}
+ok: [VM.Docker.Internal.host]
+ok: [lenovo.Docker.Backup.host]
+
+TASK [test task] ***************************************************************
+changed: [Fujitsu.PVE.Proxmox.host]
+changed: [VM.Docker.Public.host]
+changed: [VM.OMV.Primary.host]
+changed: [VM.Docker.Internal.host]
+changed: [lenovo.Docker.Backup.host]
+
+PLAY RECAP *********************************************************************
+Fujitsu.PVE.Proxmox.host   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.ansible1 : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Public.host      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.OMV.Primary.host        : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+lenovo.Docker.Backup.ansible2 : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+lenovo.Docker.Backup.host  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
