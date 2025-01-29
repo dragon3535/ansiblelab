@@ -1,3 +1,8 @@
 - name: Run omv-upgrade on OMV host
   tags: update,ssh,command,OMV
   command: omv-upgrade
+
+- name: Reboot machine after update
+  tags: reboot,update
+  reboot:
+    reboot_timeout: 600
