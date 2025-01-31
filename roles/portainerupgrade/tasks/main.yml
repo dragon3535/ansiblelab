@@ -1,0 +1,14 @@
+- name: Stop Portainer container
+  tags: update,Portainer,container,stop
+
+- name: Remove Portainer container
+  tags: update,Portainer,container,remove
+
+- name: Remove current Portainer image
+  tags: update,Portainer,image,remove
+
+- name: Pull newest Portainer image
+  tags: update,Portainer,image,pull
+
+- name: Start Portainer container
+  tags: update,Portainer,container,start

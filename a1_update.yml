@@ -1,4 +1,9 @@
 ---
+- hosts: a1_update_portainer
+  become: true
+  roles:
+    - portainerupgrade
+
 - hosts: a1_update_omv
   become: true
   roles:
