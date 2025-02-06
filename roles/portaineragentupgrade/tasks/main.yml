@@ -1,0 +1,35 @@
+- name: Stop Portainer Agent container
+  tags: update,Portainer Agent,container,stop
+  community.docker.docker_container:
+    name: "{{ portainer_agent_name }}"
+    state: stopped
+
+- name: Remove Portainer Agent container
+  tags: update,Portainer Agent,container,remove
+  community.docker.docker_container:
+    name: "{{ portainer_agent_name }}"
+    state: absent
+
+- name: Remove current Portainer Agent image
+  tags: update,Portainer Agent,image,remove
+  community.docker.docker_image_remove:
+    name: "{{ portainer_agent_image_name }}"
+
+- name: Pull newest Portainer Agent image
+  tags: update,Portainer Agent,image,pull
+  community.docker.docker_image_pull:
+    name: "{{ portainer_agent_image_name }}"
+    timeout: 300
+
+- name: Start Portainer Agent container
+  tags: update,Portainer Agent,container,start
+  community.docker.docker_container:
+    name: "{{ portainer_agent_name }}"
+    image: "{{ portainer_agent_image_name }}"
+    detach: true
+    restart_policy: "always"
+    ports:
+      - "9001:9001"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/lib/docker/volumes:/var/lib/docker/volumes"

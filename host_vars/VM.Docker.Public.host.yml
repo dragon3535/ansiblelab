@@ -1,3 +1,7 @@
 # Portainerupgrade variables
 portainer_name: portainer2
 portainer_image_name: portainer/portainer-ce:sts
+
+# Portaineragentupgrade variables
+portainer_agent_name: portainer_agent1
+portainer_agent_image_name: portainer/agent:sts
