@@ -1,11 +1,11 @@
 [ssh_access]
-Fujitsu.PVE.Proxmox.host
-VM.Docker.Internal.host
-VM.Docker.Internal.ansible1
-VM.Docker.Public.host
-VM.OMV.Primary.host
-Lenovo.Docker.Backup.host
-Lenovo.Docker.Backup.ansible2
+Fujitsu.PVE.Proxmox.host ansible_host=192.168.64.100 ansible_port=22
+VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
+VM.Docker.Internal.ansible1 ansible_host=192.168.64.110 ansible_port=2222
+VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
+VM.OMV.Primary.host ansible_host=192.168.64.200 ansible_port=22
+Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
+Lenovo.Docker.Backup.ansible2 ansible_host=192.168.64.50 ansible_port=2222
 
 [a1_update_apt]
 Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
