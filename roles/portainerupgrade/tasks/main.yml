@@ -19,7 +19,6 @@
   tags: update,Portainer,image,pull
   community.docker.docker_image_pull:
     name: "{{ portainer_image_name }}"
-    timeout: 300
 
 - name: Start Portainer container
   tags: update,Portainer,container,start
