@@ -1,5 +1,5 @@
 ---
-- host: a1_update_portainer_agent
+- hosts: a1_update_portainer_agent
   become: true
   roles:
     - portaineragentupgrade
