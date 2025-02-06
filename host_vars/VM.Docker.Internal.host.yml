@@ -1,6 +1,6 @@
 # Connection variables
-ansible_host=192.168.64.110
-ansible_port=22
+ansible_host: 192.168.64.110
+ansible_port: 22
 
 # Portainerupgrade variables
 portainer_name: portainer1
