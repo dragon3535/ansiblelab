@@ -1,0 +1,3 @@
+# Portainerupgrade variables
+partainer_name: portainer3
+portainer_image_name: portainer/portainer-ce:latest

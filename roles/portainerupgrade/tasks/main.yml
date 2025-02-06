@@ -1,14 +1,35 @@
 - name: Stop Portainer container
   tags: update,Portainer,container,stop
+  community.docker.docker_container:
+    name: "{{ portainer_name }}"
+    state: stopped
 
 - name: Remove Portainer container
   tags: update,Portainer,container,remove
+  community.docker.docker_container:
+    name: "{{ portainer_name }}"
+    state: absent
 
 - name: Remove current Portainer image
   tags: update,Portainer,image,remove
+  community.docker.docker_image_remove:
+    name: "{{ portainer_image_name }}"
 
 - name: Pull newest Portainer image
   tags: update,Portainer,image,pull
+  community.docker.docker_image_pull:
+    name: "{{ portainer_image_name }}"
 
 - name: Start Portainer container
   tags: update,Portainer,container,start
+  community.docker.docker_container:
+    name: "{{ portainer_name }}"
+    image: "{{ portainer_image_name }}"
+    detach: true
+    restart_policy: "always"
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "portainer_data:/data"
