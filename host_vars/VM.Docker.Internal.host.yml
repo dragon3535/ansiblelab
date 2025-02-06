@@ -1,3 +1,7 @@
+# Connection variables
+ansible_host=192.168.64.110
+ansible_port=22
+
 # Portainerupgrade variables
 portainer_name: portainer1
 portainer_image_name: portainer/portainer-ce:sts
