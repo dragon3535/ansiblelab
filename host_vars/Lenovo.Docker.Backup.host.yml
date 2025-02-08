@@ -5,3 +5,6 @@ portainer_image_name: portainer/portainer-ce:sts
 # Portaineragentupgrade variables
 portainer_agent_name: portainer_agent2
 portainer_agent_image_name: portainer/agent:sts
+
+# Cop=mposeupgrade variables
+compose_services: [{name: pihole2}]

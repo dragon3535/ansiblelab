@@ -1,0 +1,15 @@
+- name: "Stop Docker Commpose service: {{ item.name }}"
+  tags: update, compose, stop, service, "{{ item.name }}"
+  community.docker.docker_compose_v2:
+          project_src: "/etc/vmconfigs/compose_files/{{ item.name }}"
+          state: absent
+          remove_images: all
+  loop: "{{ compose_services }}"
+
+- name: "Repull and start Docker Compose service: {{ item.name }}"
+  tags: update, compose, start, pull, "{{ item.name }}"
+  community.docker.docker_compose_v2:
+          project_src: "/etc/vmconfigs/compose_files/{{ item.name }}"
+          state: present
+          pull: always
+  loop: "{{ compose_services }}"

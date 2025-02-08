@@ -1,4 +1,9 @@
 ---
+- hosts: a1_update_compose
+  become: true
+  roles:
+    - composeupgrade
+
 - hosts: a1_update_portainer_agent
   become: true
   roles:
