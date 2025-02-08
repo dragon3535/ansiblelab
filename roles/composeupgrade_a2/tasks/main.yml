@@ -5,7 +5,7 @@
           state: absent
           remove_orphans: true
           remove_images: all
-  loop: "{{ compose_services }}"
+  loop: "{{ a2_compose_services }}"
 
 - name: Repull and start Docker Compose service
   tags: update, compose, start, pull
@@ -14,4 +14,4 @@
           state: present
           remove_orphans: true
           pull: always
-  loop: "{{ compose_services }}"
+  loop: "{{ a2_compose_services }}"

@@ -7,4 +7,4 @@ portainer_agent_name: portainer_agent2
 portainer_agent_image_name: portainer/agent:sts
 
 # Cop=mposeupgrade variables
-compose_services: ['Pihole2', 'Ansible2']
+a1_compose_services: ['Pihole2', 'Ansible2']
