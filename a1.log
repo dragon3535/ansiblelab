@@ -69,3 +69,17 @@ VM.OMV.Primary.host        : ok=2    changed=1    unreachable=0    failed=0    s
 lenovo.Docker.Backup.ansible2 : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
 lenovo.Docker.Backup.host  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+Sat Feb  8 15:56:45 CET 2025
+
+PLAY [a1_update_compose] *******************************************************************************
+
+TASK [Gathering Facts] *********************************************************************************
+fatal: [Lenovo.Docker.Backup.host]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.64.50 port 22: Connection timed out", "unreachable": true}
+fatal: [VM.Docker.Public.host]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.64.120 port 22: Connection timed out", "unreachable": true}
+fatal: [VM.Docker.Internal.host]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 192.168.64.110 port 22: Connection timed out", "unreachable": true}
+
+PLAY RECAP *********************************************************************************************
+Lenovo.Docker.Backup.host  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Public.host      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+
