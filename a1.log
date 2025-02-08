@@ -83,3 +83,10 @@ Lenovo.Docker.Backup.host  : ok=0    changed=0    unreachable=1    failed=0    s
 VM.Docker.Internal.host    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
 VM.Docker.Public.host      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
 
+Sat Feb  8 18:35:20 UTC 2025
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Internal.host]
