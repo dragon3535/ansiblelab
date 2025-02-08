@@ -3,6 +3,7 @@
   community.docker.docker_compose_v2:
           project_src: "/etc/vmconfigs/compose_files/{{ item }}"
           state: absent
+          remove_orphans: true
           remove_images: all
   loop: "{{ compose_services }}"
 
@@ -11,5 +12,6 @@
   community.docker.docker_compose_v2:
           project_src: "/etc/vmconfigs/compose_files/{{ item }}"
           state: present
+          remove_orphans: true
           pull: always
   loop: "{{ compose_services }}"
