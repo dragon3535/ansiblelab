@@ -1,4 +1,8 @@
 ---
+- hosts: a2_update_compose
+  become: true
+  roles:
+    - composeupgrade
 
 - hosts: a2_update_apt
   become: true

@@ -7,4 +7,4 @@ portainer_agent_name: portainer_agent1
 portainer_agent_image_name: portainer/agent:sts
 
 # Composeupgrade variables
-compose_services: [{name: Jellyfin1}, {name: Filestash1}]
+compose_services: ['Jellyfin1', 'Filestash1']

@@ -3,4 +3,4 @@ portainer_name: portainer1
 portainer_image_name: portainer/portainer-ce:sts
 
 # Composeupgrade variables
-compose_services: [{name: pihole1}, {name: traefik}]
+compose_services: ['pihole1', 'traefik', 'ansible1']
