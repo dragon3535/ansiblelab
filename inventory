@@ -30,7 +30,6 @@ VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 [a1_update_compose]
 Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
-VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
 
 [a2_update_compose]
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
