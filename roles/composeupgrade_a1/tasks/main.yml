@@ -14,6 +14,4 @@
           state: present
           remove_orphans: true
           pull: always
-          wait: true
-          wait_timeout: 6000
   loop: "{{ a1_compose_services }}"
