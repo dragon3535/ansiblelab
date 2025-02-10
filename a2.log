@@ -1,0 +1,99 @@
+Mon Feb 10 11:04:31 UTC 2025
+
+PLAY [a2_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+
+TASK [composeupgrade_a2 : Stop Docker Commpose service] ************************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+TASK [composeupgrade_a2 : Repull and start Docker Compose service] *************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+PLAY [a2_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [Fujitsu.PVE.Proxmox.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+changed: [VM.Docker.Internal.host]
+changed: [Fujitsu.PVE.Proxmox.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Internal.host]
+changed: [Fujitsu.PVE.Proxmox.host]
+
+PLAY RECAP *********************************************************************
+Fujitsu.PVE.Proxmox.host   : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Mon Feb 10 16:14:37 UTC 2025
+
+PLAY [a2_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+
+TASK [composeupgrade_a2 : Stop Docker Commpose service] ************************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+TASK [composeupgrade_a2 : Repull and start Docker Compose service] *************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+PLAY [a2_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [Fujitsu.PVE.Proxmox.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+ok: [Fujitsu.PVE.Proxmox.host]
+ok: [VM.Docker.Internal.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Internal.host]
+changed: [Fujitsu.PVE.Proxmox.host]
+
+PLAY RECAP *********************************************************************
+Fujitsu.PVE.Proxmox.host   : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+Mon Feb 10 16:25:25 UTC 2025
+
+PLAY [a2_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+
+TASK [composeupgrade_a2 : Stop Docker Commpose service] ************************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+TASK [composeupgrade_a2 : Repull and start Docker Compose service] *************
+changed: [VM.Docker.Internal.host] => (item=Pihole1)
+changed: [VM.Docker.Internal.host] => (item=Ansible1)
+
+PLAY [a2_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [Fujitsu.PVE.Proxmox.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+ok: [Fujitsu.PVE.Proxmox.host]
+ok: [VM.Docker.Internal.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Internal.host]
+changed: [Fujitsu.PVE.Proxmox.host]
+
+PLAY RECAP *********************************************************************
+Fujitsu.PVE.Proxmox.host   : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=6    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
