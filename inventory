@@ -36,3 +36,4 @@ VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
 
 [zabbix_agents]
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
+VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
