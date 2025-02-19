@@ -1,5 +1,55 @@
-- name: Add Zabbix repository
+- name: Download deb repository file
   tags: dpkg, zabbix, apt, agent2
-  apt_repository:
-    repo: deb https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb
+  get_url:
+    url: https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb
+    dest: /tmp/zabbix-release_latest_7.2+debian12_all.deb
+    mode: '0660'
+
+- name: Add repository from deb file
+  tags: shell, zabbix, agent2, dpkg
+  shell:
+    chdir: /tmp/
+    cmd: dpkg -i zabbix-release_latest_7.2+debian12_all.deb
+
+      #- name: Remove downloaded deb file
+      #  tags: shell, zabbix, agent2, rm
+      #  shell:
+      #    chdir: /tmp/
+      #    cmd: rm zabbix-release_latest_7.2+debian12_all.deb
+      #    removes: zabbix-release_latest_7.2+debian12_all.deb
+
+- name: Update repositories
+  tags: apt, zabbix, agent2
+  apt:
+    update_cache: true
+
+- name: Install zabbix-agent2
+  tags: apt, zabbix, agent2, install
+  apt:
+    name: zabbix-agent2
     state: present
+
+- name: Install agent plugins
+  tags: apt, zabbix, agent2, install
+  apt:
+    state: present
+    name:
+      - zabbix-agent2-plugin-mongodb
+      - zabbix-agent2-plugin-mssql
+      - zabbix-agent2-plugin-postgresql
+
+- name: Generate and transfer zabbix-agent2 config file
+  tags: template, zabbix, agent2, config
+  template:
+    src: agent2_conf.j2
+    dest: /etc/zabbix/zabbix_agent2.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Restart and enable zabbix-agent2 service
+  tags: service, zabbix, agent2, restart
+  service:
+    name: zabbix-agent2
+    enabled: true
+    state: restarted
