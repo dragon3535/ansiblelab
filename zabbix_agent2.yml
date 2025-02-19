@@ -1,0 +1,5 @@
+---
+- hosts: zabbix_agents
+  become: true
+  roles:
+    - zabbix_agent2
