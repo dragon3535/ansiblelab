@@ -1,11 +1,11 @@
 # Portaineragentupgrade variables
-portainer_agent_name: portainer_agent1
+portainer_agent_name: portainer_agent3
 portainer_agent_image_name: portainer/agent:sts
 
 # Composeupgrade variables
-a1_compose_services: ['Filestash1','IT-tools']
+a1_compose_services: ['Jellyfin1']
 # ZabbixAgent2 variables
 
 zabbix_server: 192.168.64.120
 zabbix_server_active: 192.168.64.120
-zabbix_agent_hostname: 'VM.Docker.Public' 
+zabbix_agent_hostname: 'VM.Docker.Media' 
