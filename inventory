@@ -6,10 +6,12 @@ VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 VM.OMV.Primary.host ansible_host=192.168.64.200 ansible_port=22
 Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 Lenovo.Docker.Backup.ansible2 ansible_host=192.168.64.50 ansible_port=2222 ansible_ssh_common_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+HPE.PVE.Proxmox.host ansible_host=192.168.64.20 ansible_port=22
 
 [a1_update_apt]
 Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
+HPE.PVE.Proxmox.host ansible_host=192.168.64.20 ansible_port=22
 
 [a2_update_apt]
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
@@ -40,3 +42,4 @@ VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 VM.OMV.Primary.host ansible_host=192.168.64.200 ansible_port=22
 Lenovo.Docker.Backup.host ansible_host=192.168.64.50 ansible_port=22
 Fujitsu.PVE.Proxmox.host ansible_host=192.168.64.100 ansible_port=22
+HPE.PVE.Proxmox.host ansible_host=192.168.64.20 ansible_port=22
