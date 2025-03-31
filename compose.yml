@@ -1,0 +1,77 @@
+name: zabbix
+services:
+        postgres:
+                image: 'postgres:latest'
+                restart: unless-stopped
+                networks:
+                        zabbix-net: {}
+                environment:
+                        - POSTGRES_DB=zabbix
+                        - POSTGRES_PASSWORD=zabbix-password1997
+                        - POSTGRES_USER=zabbix
+                tty: true
+                container_name: postgres-server
+
+        zabbix-snmptraps:
+                image: 'zabbix/zabbix-snmptraps:alpine-7.2-latest'
+                restart: unless-stopped
+                ports:
+                        - '162:1162/udp'
+                networks:
+                        zabbix-net: {}
+                volumes:
+                        - '/var/lib/zabbix/mibs:/usr/share/snmp/mibs:ro'
+                        - '/etc/vmconfigs/zabbix/snmptraps:/var/lib/zabbix/snmptraps:rw'
+                tty: true
+                container_name: zabbix-snmptraps
+
+        zabbix-server-pgsql:
+                image: 'zabbix/zabbix-server-pgsql:alpine-7.2-latest'
+                restart: unless-stopped
+                depends_on:
+                        postgres:
+                                condition: service_started
+                        zabbix-snmptraps:
+                                condition: service_started
+                volumes_from:
+                        - zabbix-snmptraps
+                ports:
+                        - '10051:10051'
+                networks:
+                        zabbix-net: {}
+                environment:
+                        - ZBX_ENABLE_SNMP_TRAPS=true
+                        - POSTGRES_DB=zabbix
+                        - POSTGRES_PASSWORD=zabbix-password1997
+                        - POSTGRES_USER=zabbix
+                        - DB_SERVER_HOST=postgres-server
+                tty: true
+                container_name: zabbix-server-pgsql
+
+        zabbix-web-nginx-pgsql:
+                image: 'zabbix/zabbix-web-nginx-pgsql:alpine-7.2-latest'
+                restart: unless-stopped
+                depends_on:
+                        zabbix-server-pgsql:
+                                condition: service_started
+                ports:
+                        - '80:8080'
+                        - '443:8443'
+                networks:
+                        zabbix-net: {}
+                environment:
+                        - POSTGRES_DB=zabbix
+                        - POSTGRES_PASSWORD=zabbix-password1997
+                        - POSTGRES_USER=zabbix
+                        - DB_SERVER_HOST=postgres-server
+                        - ZBX_SERVER_HOST=zabbix-server-pgsql
+                tty: true
+                container_name: zabbix-web-nginx-pgsql
+
+networks:
+        zabbix-net:
+                ipam:
+                        driver: default
+                        config:
+                                - subnet: 172.20.0.0/16
+                                  ip_range: 172.20.240.0/20

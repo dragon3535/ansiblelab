@@ -1,4 +1,11 @@
-- name: Stop Docker Commpose service
+- name: Stop Docker Compose service
+  tags: update, compose, stop, service
+  community.docker.docker_compose_v2:
+          project_src: "/etc/vmconfigs/compose_files/{{ item }}"
+          state: stopped
+  loop: "{{ a1_compose_services }}"
+
+- name: Remove Docker Commpose service
   tags: update, compose, stop, service
   community.docker.docker_compose_v2:
           project_src: "/etc/vmconfigs/compose_files/{{ item }}"

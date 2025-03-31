@@ -1,8 +1,15 @@
+- name: Install sudo
+  tags: bootstrap, apt, sudo
+  apt:
+    update-cache: true
+    state: present
+    name: sudo
+
 - name: Create ansible-bot user
   tags: bootstrap,ssh,users
   user:
     name: ansible-bot
-    groups: root 
+    groups: root, sudo 
 
 - name: Add ssh key for ansible-bot user
   tags: bootstrap,ssh
