@@ -1,0 +1,7 @@
+- name: Add zabbix user to docker group
+  tags: zabbix, agent2, user, docker
+  user:
+    name: zabbix
+    groups: docker
+    append: yes
+    create_home: false

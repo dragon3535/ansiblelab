@@ -3,3 +3,8 @@
   become: true
   roles:
     - zabbix_agent2
+
+- hosts: zabbix_agents_docker
+  become: true
+  roles:
+    - zabix_agent2_docker
