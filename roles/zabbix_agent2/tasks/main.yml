@@ -38,6 +38,12 @@
       - zabbix-agent2-plugin-mssql
       - zabbix-agent2-plugin-postgresql
 
+- name: Update cache, dist-upgrade
+  tags: apt,update
+  apt:
+    update-cache: true
+    upgrade: "dist"
+
 - name: Generate and transfer zabbix-agent2 config file
   tags: template, zabbix, agent2, config
   template:
