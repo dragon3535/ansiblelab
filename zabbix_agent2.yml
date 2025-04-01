@@ -7,4 +7,4 @@
 - hosts: zabbix_agents_docker
   become: true
   roles:
-    - zabix_agent2_docker
+    - zabbix_agent2_docker

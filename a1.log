@@ -310,3 +310,117 @@ VM.Docker.Internal.host    : ok=6    changed=5    unreachable=0    failed=0    s
 VM.Docker.Public.host      : ok=18   changed=14   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 VM.OMV.Primary.host        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+Sat Mar 29 21:01:22 UTC 2025
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+ok: [Lenovo.Docker.Backup.host]
+
+TASK [composeupgrade_a1 : Stop Docker Compose service] *************************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [Lenovo.Docker.Backup.host] => (item=Pihole2)
+changed: [Lenovo.Docker.Backup.host] => (item=Ansible2)
+
+TASK [composeupgrade_a1 : Remove Docker Commpose service] **********************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+ok: [VM.Docker.Public.host] => (item=IT-tools)
+ok: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [Lenovo.Docker.Backup.host] => (item=Pihole2)
+changed: [Lenovo.Docker.Backup.host] => (item=Ansible2)
+
+TASK [composeupgrade_a1 : Repull and start Docker Compose service] *************
+failed: [VM.Docker.Public.host] (item=Filestash1) => {"actions": [{"id": "app", "status": "Pulling", "what": "service"}, {"id": "wopi_server", "status": "Pulling", "what": "service"}, {"id": "filestash1_default", "status": "Creating", "what": "network"}, {"id": "filestash", "status": "Creating", "what": "container"}, {"id": "filestash_wopi", "status": "Creating", "what": "container"}], "ansible_loop_var": "item", "changed": true, "cmd": "/usr/bin/docker compose --ansi never --progress plain --project-directory /etc/vmconfigs/compose_files/Filestash1 up --detach --no-color --quiet-pull --pull always --remove-orphans --", "containers": [], "images": [], "item": "Filestash1", "msg": "Error when processing network filestash1_default: Error\nGeneral error: Error response from daemon: Conflict. The container name \"/filestash_wopi\" is already in use by container \"6442717cb5c3681b1480f344e425ac5794552f5eeb1aa5d3d8ff2757804cb485\". You have to remove (or rename) that container to be able to reuse that name.", "rc": 1, "stderr": " app Pulling \n wopi_server Pulling \n app Pulled \n wopi_server Pulled \n Network filestash1_default  Creating\n Network filestash1_default  Error\n Container filestash  Creating\n Container filestash_wopi  Creating\nError response from daemon: Conflict. The container name \"/filestash_wopi\" is already in use by container \"6442717cb5c3681b1480f344e425ac5794552f5eeb1aa5d3d8ff2757804cb485\". You have to remove (or rename) that container to be able to reuse that name.\n", "stderr_lines": [" app Pulling ", " wopi_server Pulling ", " app Pulled ", " wopi_server Pulled ", " Network filestash1_default  Creating", " Network filestash1_default  Error", " Container filestash  Creating", " Container filestash_wopi  Creating", "Error response from daemon: Conflict. The container name \"/filestash_wopi\" is already in use by container \"6442717cb5c3681b1480f344e425ac5794552f5eeb1aa5d3d8ff2757804cb485\". You have to remove (or rename) that container to be able to reuse that name."], "stdout": "", "stdout_lines": []}
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [Lenovo.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [Lenovo.Docker.Backup.host] => (item=Ansible2)
+
+PLAY [a1_update_portainer_agent] ***********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Media.host]
+ok: [Lenovo.Docker.Backup.host]
+
+TASK [portaineragentupgrade : Stop Portainer Agent container] ******************
+changed: [VM.Docker.Media.host]
+changed: [Lenovo.Docker.Backup.host]
+
+TASK [portaineragentupgrade : Remove Portainer Agent container] ****************
+changed: [VM.Docker.Media.host]
+changed: [Lenovo.Docker.Backup.host]
+
+TASK [portaineragentupgrade : Remove current Portainer Agent image] ************
+changed: [VM.Docker.Media.host]
+changed: [Lenovo.Docker.Backup.host]
+
+TASK [portaineragentupgrade : Pull newest Portainer Agent image] ***************
+changed: [VM.Docker.Media.host]
+changed: [Lenovo.Docker.Backup.host]
+
+TASK [portaineragentupgrade : Start Portainer Agent container] *****************
+changed: [VM.Docker.Media.host]
+changed: [Lenovo.Docker.Backup.host]
+
+PLAY [a1_update_portainer] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [Lenovo.Docker.Backup.host]
+
+TASK [portainerupgrade : Stop Portainer container] *****************************
+changed: [VM.Docker.Internal.host]
+fatal: [Lenovo.Docker.Backup.host]: FAILED! => {"changed": false, "msg": "Error inspecting image ID sha256:aefec2f8ef560ed0cec081d196f86256fe914e8a04dc99da35c66fc73047de77 - UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)"}
+
+TASK [portainerupgrade : Remove Portainer container] ***************************
+changed: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Remove current Portainer image] ***********************
+changed: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Pull newest Portainer image] **************************
+changed: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Start Portainer container] ****************************
+changed: [VM.Docker.Internal.host]
+
+PLAY [a1_update_omv] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Run omv-upgrade on OMV host] ********************************
+changed: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Reboot machine after update] ********************************
+changed: [VM.OMV.Primary.host]
+
+PLAY [a1_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Media.host]
+ok: [HPE.PVE.Proxmox.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+changed: [VM.Docker.Media.host]
+changed: [HPE.PVE.Proxmox.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Media.host]
+changed: [HPE.PVE.Proxmox.host]
+
+PLAY RECAP *********************************************************************
+HPE.PVE.Proxmox.host       : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+Lenovo.Docker.Backup.host  : ok=11   changed=8    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Media.host       : ok=13   changed=10   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Public.host      : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+VM.OMV.Primary.host        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
