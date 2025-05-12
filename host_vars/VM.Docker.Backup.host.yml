@@ -12,4 +12,4 @@ a1_compose_services: ['Pihole2', 'Ansible2']
 # ZabbixAgent2 variables
 zabbix_server: 192.168.64.120
 zabbix_server_active: 192.168.64.120
-zabbix_agent_hostname: Lenovo.Docker.Backup
+zabbix_agent_hostname: VM.Docker.Backup
