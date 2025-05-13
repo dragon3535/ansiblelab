@@ -1,4 +1,9 @@
 ---
+- hosts: dns_repair
+  become: true
+  roles:
+    - dns_repair
+
 - hosts: a2_update_compose
   become: true
   roles:

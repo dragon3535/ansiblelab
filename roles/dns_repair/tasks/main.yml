@@ -1,6 +1,6 @@
 - name: Transfer /etc/systemd/resolved file
   tags: dns, transfer, resolved
-  template:
+  copy:
     src: resolved.conf
     dest: /etc/systemd/resolved.conf
     owner: root
