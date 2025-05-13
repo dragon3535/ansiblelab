@@ -1,0 +1,14 @@
+- name: Transfer /etc/systemd/resolved file
+  tags: dns, transfer, resolved
+  template:
+    src: resolved.conf
+    dest: /etc/systemd/resolved.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Restart resolved serviced
+  tags: service, resolved, restart
+  service:
+    name: systemd-resolved.service
+    state: restarted
