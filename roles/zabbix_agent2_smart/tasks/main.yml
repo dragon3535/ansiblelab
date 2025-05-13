@@ -1,0 +1,22 @@
+- name: Install smartmontools
+  tags: apt, zabbix, agent2, install
+  apt:
+    state: present
+    name:
+      - smartmontools
+
+- name: Add sudoers file for zabbix user
+  tags: sudoers,copy
+  copy:
+    src: sudoer_zabbix
+    dest: /etc/sudoers.d/zabbix
+    owner: root
+    group: root
+    mode: 0440
+
+- name: Restart and enable zabbix-agent2 service
+  tags: service, zabbix, agent2, restart
+  service:
+    name: zabbix-agent2
+    enabled: true
+    state: restarted
