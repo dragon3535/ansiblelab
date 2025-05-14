@@ -3,7 +3,7 @@ portainer_agent_name: portainer_agent1
 portainer_agent_image_name: portainer/agent:sts
 
 # Composeupgrade variables
-a1_compose_services: ['Filestash1','IT-tools', 'Vaultwarden', 'Zabbix1']
+a1_compose_services: ['Filestash1','IT-tools', 'Vaultwarden', 'Zabbix1', 'Speedtest1']
 # ZabbixAgent2 variables
 
 zabbix_server: '192.168.64.120,172.25.240.0/24'
