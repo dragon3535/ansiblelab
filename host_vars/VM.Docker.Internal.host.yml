@@ -4,7 +4,7 @@ portainer_image_name: portainer/portainer-ce:sts
 
 # Composeupgrade variables
 a1_compose_services: []
-a2_compose_services: ['Pihole1', 'Ansible1']
+a2_compose_services: ['Pihole1', 'Ansible1','Authentik']
 
 # ZabbixAgent2 variables
 zabbix_server: 192.168.64.120
