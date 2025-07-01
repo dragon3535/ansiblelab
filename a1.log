@@ -424,3 +424,6 @@ VM.Docker.Media.host       : ok=13   changed=10   unreachable=0    failed=0    s
 VM.Docker.Public.host      : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
 VM.OMV.Primary.host        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 
+tee: read error: Bad file descriptor
+ERROR! Empty playbook, nothing to do: /ansible/files/ansiblelab/a1_update.yml
+ERROR! Empty playbook, nothing to do: /ansible/files/ansiblelab/a1_update.yml
