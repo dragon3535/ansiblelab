@@ -1,0 +1,278 @@
+ERROR! Empty playbook, nothing to do: /ansible/files/ansiblelab/a1_update.yml
+
+PLAY [dns_repair] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [dns_repair : Transfer /etc/systemd/resolved file] ************************
+ok: [VM.Docker.Public.host]
+changed: [VM.Docker.Internal.host]
+ok: [VM.Docker.Media.host]
+ok: [VM.Docker.Backup.host]
+
+TASK [dns_repair : Restart resolved serviced] **********************************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [composeupgrade_a1 : Stop Docker Compose service] *************************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Media.host] => (item=Immich)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+
+TASK [composeupgrade_a1 : Remove Docker Commpose service] **********************
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Media.host] => (item=Immich)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+
+TASK [composeupgrade_a1 : Repull and start Docker Compose service] *************
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+ [ERROR]: User interrupted execution
+
+PLAY [dns_repair] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [dns_repair : Transfer /etc/systemd/resolved file] ************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Media.host]
+ok: [VM.Docker.Backup.host]
+
+TASK [dns_repair : Restart resolved serviced] **********************************
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+ok: [VM.Docker.Backup.host]
+
+TASK [composeupgrade_a1 : Stop Docker Compose service] *************************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+ [ERROR]: User interrupted execution
+
+PLAY [dns_repair] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [dns_repair : Transfer /etc/systemd/resolved file] ************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Media.host]
+
+TASK [dns_repair : Restart resolved serviced] **********************************
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [composeupgrade_a1 : Stop Docker Compose service] *************************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Media.host] => (item=Immich)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+
+TASK [composeupgrade_a1 : Remove Docker Commpose service] **********************
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Media.host] => (item=Immich)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+
+TASK [composeupgrade_a1 : Repull and start Docker Compose service] *************
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+changed: [VM.Docker.Media.host] => (item=Immich)
+
+PLAY [a1_update_portainer_agent] ***********************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Media.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Public.host]
+
+TASK [portaineragentupgrade : Stop Portainer Agent container] ******************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+TASK [portaineragentupgrade : Remove Portainer Agent container] ****************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+TASK [portaineragentupgrade : Remove current Portainer Agent image] ************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+TASK [portaineragentupgrade : Pull newest Portainer Agent image] ***************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+TASK [portaineragentupgrade : Start Portainer Agent container] *****************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+PLAY [a1_update_portainer] *****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Stop Portainer container] *****************************
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Backup.host]
+
+TASK [portainerupgrade : Remove Portainer container] ***************************
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Remove current Portainer image] ***********************
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Internal.host]
+
+TASK [portainerupgrade : Pull newest Portainer image] **************************
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Backup.host]
+
+TASK [portainerupgrade : Start Portainer container] ****************************
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Backup.host]
+
+PLAY [a1_update_omv] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Run omv-upgrade on OMV host] ********************************
+changed: [VM.OMV.Primary.host]
+
+TASK [omvupgrade : Reboot machine after update] ********************************
+changed: [VM.OMV.Primary.host]
+
+PLAY [a1_update_apt] ***********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Backup.host]
+ok: [HPE.PVE.Proxmox.host]
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Media.host]
+
+TASK [aptupgrade : Update cache, dist-pugrade, autoremove and autoclean] *******
+changed: [HPE.PVE.Proxmox.host]
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+TASK [aptupgrade : Reboot machine after update] ********************************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Media.host]
+changed: [VM.Docker.Backup.host]
+changed: [HPE.PVE.Proxmox.host]
+
+PLAY RECAP *********************************************************************
+HPE.PVE.Proxmox.host       : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Backup.host      : ok=22   changed=16   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Internal.host    : ok=9    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Media.host       : ok=16   changed=11   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.Docker.Public.host      : ok=16   changed=11   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+VM.OMV.Primary.host        : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

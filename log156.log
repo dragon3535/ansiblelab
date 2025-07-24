@@ -1,0 +1,57 @@
+
+PLAY [dns_repair] **************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Media.host]
+ok: [VM.Docker.Backup.host]
+
+TASK [dns_repair : Transfer /etc/systemd/resolved file] ************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Internal.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Media.host]
+
+TASK [dns_repair : Restart resolved serviced] **********************************
+changed: [VM.Docker.Public.host]
+changed: [VM.Docker.Internal.host]
+changed: [VM.Docker.Backup.host]
+changed: [VM.Docker.Media.host]
+
+PLAY [a1_update_compose] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [VM.Docker.Public.host]
+ok: [VM.Docker.Backup.host]
+ok: [VM.Docker.Media.host]
+
+TASK [composeupgrade_a1 : Stop Docker Compose service] *************************
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+changed: [VM.Docker.Media.host] => (item=Immich)
+
+TASK [composeupgrade_a1 : Remove Docker Commpose service] **********************
+changed: [VM.Docker.Media.host] => (item=Jellyfin1)
+changed: [VM.Docker.Backup.host] => (item=Pihole2)
+changed: [VM.Docker.Public.host] => (item=Filestash1)
+changed: [VM.Docker.Public.host] => (item=IT-tools)
+changed: [VM.Docker.Public.host] => (item=Vaultwarden)
+changed: [VM.Docker.Backup.host] => (item=Ansible2)
+changed: [VM.Docker.Public.host] => (item=Zabbix1)
+changed: [VM.Docker.Public.host] => (item=Speedtest1)
+changed: [VM.Docker.Public.host] => (item=Wireguard1)
+changed: [VM.Docker.Media.host] => (item=Immich)
+changed: [VM.Docker.Public.host] => (item=Syncthing)
+changed: [VM.Docker.Public.host] => (item=Urbackup)
+
+TASK [composeupgrade_a1 : Repull and start Docker Compose service] *************
