@@ -1,0 +1,11 @@
+# Portaineragentupgrade variables
+portainer_agent_name: portainer_agent_files
+portainer_agent_image_name: portainer/agent:sts
+
+# Composeupgrade variables
+a1_compose_services: ['Syncthing','Urbackup']
+# ZabbixAgent2 variables
+
+zabbix_server: '192.168.64.115'
+zabbix_server_active: '192.168.64.115'
+zabbix_agent_hostname: 'VM.Docker.Files'

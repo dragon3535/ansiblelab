@@ -2,11 +2,15 @@
 portainer_name: portainer1
 portainer_image_name: portainer/portainer-ce:sts
 
+# Portaineragentupgrade variables
+portainer_agent_name: portainer_agent_internal
+portainer_agent_image_name: portainer/agent:sts
+
 # Composeupgrade variables
-a1_compose_services: []
+a1_compose_services: ['']
 a2_compose_services: ['Pihole1', 'Ansible1']
 
 # ZabbixAgent2 variables
-zabbix_server: 192.168.64.120
-zabbix_server_active: 192.168.64.120
+zabbix_server: 192.168.64.115
+zabbix_server_active: 192.168.64.115
 zabbix_agent_hostname: 'VM.Docker.Internal'

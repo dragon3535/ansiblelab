@@ -1,4 +1,4 @@
 # ZabbixAgent2 variables
-zabbix_server: 192.168.64.120
-zabbix_server_active: 192.168.64.120
+zabbix_server: 192.168.64.115
+zabbix_server_active: 192.168.64.115
 zabbix_agent_hostname: VM.OMV.Primary
