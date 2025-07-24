@@ -27,7 +27,8 @@ HPE.PVE.Proxmox.host ansible_host=192.168.64.20 ansible_port=22
 VM.Docker.Media.host ansible_host=192.168.64.130 ansible_port=22
 VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22
 VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
-VM.Docker.Files.host ansible_host=192.168.64.125 ansible_port=22   HPP.PVE.Proxmox.host ansible_host=192.168.64.50 ansible_port=22
+VM.Docker.Files.host ansible_host=192.168.64.125 ansible_port=22
+HPP.PVE.Proxmox.host ansible_host=192.168.64.50 ansible_port=22
 
 [a2_update_apt]
 VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
@@ -44,7 +45,8 @@ VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
 VM.Docker.Backup.host ansible_host=192.168.64.150 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 VM.Docker.Media.host ansible_host=192.168.64.130 ansible_port=22
-VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22
+VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
+VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22
 VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
 VM.Docker.Files.host ansible_host=192.168.64.125 ansible_port=22
 
@@ -67,7 +69,8 @@ VM.Docker.Backup.host ansible_host=192.168.64.150 ansible_port=22
 Fujitsu.PVE.Proxmox.host ansible_host=192.168.64.100 ansible_port=22
 HPE.PVE.Proxmox.host ansible_host=192.168.64.20 ansible_port=22
 VM.Docker.Media.host ansible_host=192.168.64.130 ansible_port=22
-VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22 VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
+VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22
+VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
 VM.Docker.Files.host ansible_host=192.168.64.125 ansible_port=22
 HPP.PVE.Proxmox.host ansible_host=192.168.64.50 ansible_port=22
 
@@ -76,7 +79,8 @@ VM.Docker.Internal.host ansible_host=192.168.64.110 ansible_port=22
 VM.Docker.Public.host ansible_host=192.168.64.120 ansible_port=22
 VM.Docker.Backup.host ansible_host=192.168.64.150 ansible_port=22
 VM.Docker.Media.host ansible_host=192.168.64.130 ansible_port=22
-VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22 VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
+VM.Docker.Web.POS.host ansible_host=192.168.64.105 ansible_port=22
+VM.Docker.Monitoring.host ansible_host=192.168.64.115 ansible_port=22
 VM.Docker.Files.host ansible_host=192.168.64.125 ansible_port=22
 
 [zabbix_agents_smart]
