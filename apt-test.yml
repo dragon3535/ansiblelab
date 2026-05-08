@@ -1,8 +1,13 @@
 ---
-- name: Update cache, dist-pugrade, autoremove and autoclean
-  tags: apt,update
-  apt:
-    autoclean: true
-    autoremove: true
-    update-cache: true
-    upgrade: "dist"
+- hosts: all
+  become: true
+  tasks:
+
+
+  - name: Update cache, dist-pugrade, autoremove and autoclean
+    tags: apt,update
+    apt:
+      autoclean: true
+      autoremove: true
+      update-cache: true
+      upgrade: "dist"
