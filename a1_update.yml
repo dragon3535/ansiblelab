@@ -4,27 +4,27 @@
   roles:
     - dns_repair
 
-- hosts: a1_update_compose
+- hosts: update_compose
   become: true
   roles:
     - composeupgrade_a1
 
-- hosts: a1_update_portainer_agent
+- hosts: update_portainer_agent
   become: true
   roles:
     - portaineragentupgrade
 
-- hosts: a1_update_portainer
+- hosts: update_portainer
   become: true
   roles:
     - portainerupgrade
 
-- hosts: a1_update_omv
+- hosts: update_omv
   become: true
   roles:
     - omvupgrade
 
-- hosts: a1_update_apt
+- hosts: update_apt
   become: true
   roles:
     - aptupgrade
