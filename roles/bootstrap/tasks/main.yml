@@ -15,7 +15,7 @@
   tags: bootstrap,ssh
   authorized_key:
     user: ansible-bot
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMdsFt7tqiEStmZ4WQnvhvE1GHIBipkVmZZNOEMycp91 id_main_ansible_key"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIxStHYnfTpoIC+j88LgiQHstIPkppza2FkLBLoETyd8 ansible-main-key"
 
 - name: Add sudoers file for ansible-bot
   tags: bootstrap,sudoers,copy
