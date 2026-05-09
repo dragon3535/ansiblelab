@@ -1,7 +1,7 @@
 - name: Download deb repository file
   tags: dpkg, zabbix, apt, agent2
   get_url:
-    url: https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb
+    url: https://repo.zabbix.com/zabbix/7.4/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.4+ubuntu26.04_all.deb
     dest: /tmp/zabbix-release_latest_7.2+debian12_all.deb
     mode: '0660'
 
