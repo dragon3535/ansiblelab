@@ -1,0 +1,6 @@
+- name: Make sure containers are started
+  tags: start, compose, check, service
+  community.docker.docker_compose_v2:
+          project_src: "/etc/vmconfigs/compose_files/{{ item }}"
+          state: restarted
+  loop: "{{ a1_compose_services }}"
