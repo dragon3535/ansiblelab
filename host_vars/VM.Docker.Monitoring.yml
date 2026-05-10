@@ -7,5 +7,5 @@ a1_compose_services: ['Zabbix1', 'Selenium']
 # ZabbixAgent2 variables
 
 zabbix_server: '192.168.64.115,172.25.240.0/24'
-zabbix_server_active: '192.168.64.115,172.25.240.10'
+zabbix_server_active: '192.168.64.115,172.25.240.0/24'
 zabbix_agent_hostname: 'VM.Docker.Monitoring'
