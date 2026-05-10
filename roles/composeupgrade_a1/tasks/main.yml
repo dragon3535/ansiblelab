@@ -22,3 +22,7 @@
           remove_orphans: true
           pull: always
   loop: "{{ a1_compose_services }}"
+  register: result
+  until: result.stderr.find("error") = -1
+  retries: 5
+  delay: 10
