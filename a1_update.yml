@@ -28,3 +28,8 @@
   become: true
   roles:
     - aptupgrade
+
+- hosts: update_compose
+  become: true
+  roles:
+    - containers_started
